@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:todoey_flutter/components/task_tile.dart';
 
 class TasksScreen extends StatelessWidget {
   @override
@@ -52,11 +53,23 @@ class TasksScreen extends StatelessWidget {
           Expanded(
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30.0),
-                    topRight: Radius.circular(30.0),
-                  )),
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30.0),
+                  topRight: Radius.circular(30.0),
+                ),
+              ),
+              child: ListView(
+                padding: EdgeInsets.symmetric(horizontal: 14.0, vertical: 30.0),
+                children: <Widget>[
+                  TaskTile(
+                    task: 'Buy milk',
+                  ),
+                  TaskTile(
+                    task: 'Buy eggs',
+                  ),
+                ],
+              ),
             ),
           ),
         ],
