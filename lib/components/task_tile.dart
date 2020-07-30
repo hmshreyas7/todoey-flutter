@@ -19,9 +19,11 @@ class _TaskTileState extends State<TaskTile> {
         widget.task,
         style: TextStyle(
           fontSize: 20.0,
+          decoration: isDone ? TextDecoration.lineThrough : null,
         ),
       ),
       trailing: Checkbox(
+        activeColor: Colors.lightBlueAccent,
         value: isDone,
         onChanged: (newValue) {
           setState(() {
