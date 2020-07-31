@@ -51,7 +51,9 @@ class AddTaskSheet extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              onAddPressed(newTask);
+              if (newTask != null) {
+                onAddPressed(newTask);
+              }
             },
           ),
         ],
