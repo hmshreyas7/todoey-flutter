@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:todoey_flutter/components/add_task_sheet.dart';
 import 'package:todoey_flutter/components/tasks_list.dart';
-import 'package:todoey_flutter/task.dart';
+import 'package:provider/provider.dart';
+import 'package:todoey_flutter/models/task_data.dart';
 
-class TasksScreen extends StatefulWidget {
-  @override
-  _TasksScreenState createState() => _TasksScreenState();
-}
-
-class _TasksScreenState extends State<TasksScreen> {
-  List<Task> tasks = [];
-
+class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,12 +42,18 @@ class _TasksScreenState extends State<TasksScreen> {
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                Text(
-                  (tasks.length == 1) ? '1 task' : '${tasks.length} tasks',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20.0,
-                  ),
+                Consumer<TaskData>(
+                  builder: (context, taskData, widget) {
+                    return Text(
+                      (taskData.taskCount == 1)
+                          ? '1 task'
+                          : '${taskData.taskCount} tasks',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
@@ -68,11 +68,10 @@ class _TasksScreenState extends State<TasksScreen> {
                 ),
               ),
               child: TasksList(
-                tasks: tasks,
                 onCheckboxChanged: (index, newValue) {
-                  setState(() {
-                    tasks[index].isDone = newValue;
-                  });
+//                  setState(() {
+//                    tasks[index].isDone = newValue;
+//                  });
                 },
               ),
             ),
@@ -90,9 +89,9 @@ class _TasksScreenState extends State<TasksScreen> {
                   bottom: MediaQuery.of(context).viewInsets.bottom),
               child: AddTaskSheet(
                 onAddPressed: (newTask) {
-                  setState(() {
-                    tasks.add(Task(title: newTask));
-                  });
+//                  setState(() {
+//                    tasks.add(Task(title: newTask));
+//                  });
                   Navigator.pop(context);
                 },
               ),
