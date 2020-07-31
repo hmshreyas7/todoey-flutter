@@ -91,9 +91,9 @@ class _TasksScreenState extends State<TasksScreen> {
               child: AddTaskSheet(
                 onAddPressed: (newTask) {
                   setState(() {
-                    Navigator.pop(context);
                     tasks.add(Task(title: newTask));
                   });
+                  Navigator.pop(context);
                 },
               ),
             ),
