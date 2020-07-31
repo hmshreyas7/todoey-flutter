@@ -67,13 +67,7 @@ class TasksScreen extends StatelessWidget {
                   topRight: Radius.circular(30.0),
                 ),
               ),
-              child: TasksList(
-                onCheckboxChanged: (index, newValue) {
-//                  setState(() {
-//                    tasks[index].isDone = newValue;
-//                  });
-                },
-              ),
+              child: TasksList(),
             ),
           ),
         ],
