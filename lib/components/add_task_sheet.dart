@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todoey_flutter/models/task_data.dart';
 
 class AddTaskSheet extends StatelessWidget {
-  final Function onAddPressed;
-
-  AddTaskSheet({this.onAddPressed});
-
   @override
   Widget build(BuildContext context) {
     String newTask;
@@ -52,7 +50,8 @@ class AddTaskSheet extends StatelessWidget {
             ),
             onPressed: () {
               if (newTask != null) {
-                onAddPressed(newTask);
+                Provider.of<TaskData>(context, listen: false).addTask(newTask);
+                Navigator.pop(context);
               }
             },
           ),

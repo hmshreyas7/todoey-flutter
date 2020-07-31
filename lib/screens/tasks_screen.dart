@@ -87,14 +87,7 @@ class TasksScreen extends StatelessWidget {
             builder: (context) => SingleChildScrollView(
               padding: EdgeInsets.only(
                   bottom: MediaQuery.of(context).viewInsets.bottom),
-              child: AddTaskSheet(
-                onAddPressed: (newTask) {
-//                  setState(() {
-//                    tasks.add(Task(title: newTask));
-//                  });
-                  Navigator.pop(context);
-                },
-              ),
+              child: AddTaskSheet(),
             ),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
