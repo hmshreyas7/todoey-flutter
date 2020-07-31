@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:todoey_flutter/components/add_task_sheet.dart';
 import 'package:todoey_flutter/components/tasks_list.dart';
+import 'package:todoey_flutter/task.dart';
 
-class TasksScreen extends StatelessWidget {
+class TasksScreen extends StatefulWidget {
+  @override
+  _TasksScreenState createState() => _TasksScreenState();
+}
+
+class _TasksScreenState extends State<TasksScreen> {
+  List<Task> tasks = [];
+  String newTask;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +68,14 @@ class TasksScreen extends StatelessWidget {
                   topRight: Radius.circular(30.0),
                 ),
               ),
-              child: TasksList(),
+              child: TasksList(
+                tasks: tasks,
+                onCheckboxChanged: (index, newValue) {
+                  setState(() {
+                    tasks[index].isDone = newValue;
+                  });
+                },
+              ),
             ),
           ),
         ],
@@ -73,7 +89,17 @@ class TasksScreen extends StatelessWidget {
             builder: (context) => SingleChildScrollView(
               padding: EdgeInsets.only(
                   bottom: MediaQuery.of(context).viewInsets.bottom),
-              child: AddTaskSheet(),
+              child: AddTaskSheet(
+                onTaskChanged: (value) {
+                  newTask = value;
+                },
+                onAddPressed: () {
+                  setState(() {
+                    Navigator.pop(context);
+                    tasks.add(Task(title: newTask));
+                  });
+                },
+              ),
             ),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(

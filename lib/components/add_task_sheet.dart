@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class AddTaskSheet extends StatelessWidget {
+  final Function onTaskChanged, onAddPressed;
+
+  AddTaskSheet({this.onTaskChanged, this.onAddPressed});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,6 +21,7 @@ class AddTaskSheet extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           TextField(
+            onChanged: onTaskChanged,
             decoration: InputDecoration(
               focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
@@ -41,7 +46,7 @@ class AddTaskSheet extends StatelessWidget {
                 fontSize: 20.0,
               ),
             ),
-            onPressed: () {},
+            onPressed: onAddPressed,
           ),
         ],
       ),
