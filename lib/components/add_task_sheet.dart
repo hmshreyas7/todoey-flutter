@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class AddTaskSheet extends StatelessWidget {
-  final Function onTaskChanged, onAddPressed;
+  final Function onAddPressed;
 
-  AddTaskSheet({this.onTaskChanged, this.onAddPressed});
+  AddTaskSheet({this.onAddPressed});
 
   @override
   Widget build(BuildContext context) {
+    String newTask;
+
     return Container(
       padding: EdgeInsets.all(30.0),
       child: Column(
@@ -21,7 +23,9 @@ class AddTaskSheet extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           TextField(
-            onChanged: onTaskChanged,
+            onChanged: (value) {
+              newTask = value;
+            },
             decoration: InputDecoration(
               focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
@@ -46,7 +50,9 @@ class AddTaskSheet extends StatelessWidget {
                 fontSize: 20.0,
               ),
             ),
-            onPressed: onAddPressed,
+            onPressed: () {
+              onAddPressed(newTask);
+            },
           ),
         ],
       ),

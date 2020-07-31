@@ -10,7 +10,6 @@ class TasksScreen extends StatefulWidget {
 
 class _TasksScreenState extends State<TasksScreen> {
   List<Task> tasks = [];
-  String newTask;
 
   @override
   Widget build(BuildContext context) {
@@ -90,10 +89,7 @@ class _TasksScreenState extends State<TasksScreen> {
               padding: EdgeInsets.only(
                   bottom: MediaQuery.of(context).viewInsets.bottom),
               child: AddTaskSheet(
-                onTaskChanged: (value) {
-                  newTask = value;
-                },
-                onAddPressed: () {
+                onAddPressed: (newTask) {
                   setState(() {
                     Navigator.pop(context);
                     tasks.add(Task(title: newTask));
