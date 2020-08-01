@@ -1,16 +1,36 @@
-# todoey_flutter
+# Todoey - A Flutter To-Do List App
 
-A new Flutter application.
+Built as part of "The Complete Flutter Development Bootcamp Using Dart" - Section 16 by [The App Brewery](https://www.appbrewery.co/).
+
+This app allows users to add tasks, check them off, and delete them by swiping using the Provider package.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+```
+Android Studio: >=3.6.3
+Flutter: >=1.17.5
+```
+### Installing
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+[Android Studio](https://developer.android.com/studio)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[Flutter](https://flutter.dev/docs/get-started/install)
+
+## Running the project
+
+* Open Android Studio -> Select "Check out project from Version Control" -> Select "Git".
+
+* Enter the following repo URL and select "Clone".
+```
+https://github.com/hmshreyas7/todoey-flutter.git
+```
+
+* Click "No" when Android Studio asks if it should create a new project.
+
+* Select "Open an existing Android Studio project" and choose the cloned repo.
+
+* Once the project loads the necessary files, click "Pub get" on the top-right to install required dependencies.
+
+* Run the app either through an emulator in the IDE or a physical device connected via USB to see how it works.
