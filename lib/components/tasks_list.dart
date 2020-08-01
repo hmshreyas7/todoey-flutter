@@ -11,11 +11,17 @@ class TasksList extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 14.0, vertical: 30.0),
         itemBuilder: (context, index) {
           final task = taskData.tasks[index];
-          return TaskTile(
-            title: task.title,
-            isDone: task.isDone,
-            onCheckboxChanged: (newValue) {
-              taskData.updateTask(task);
+          return Dismissible(
+            key: Key(UniqueKey().toString()),
+            child: TaskTile(
+              title: task.title,
+              isDone: task.isDone,
+              onCheckboxChanged: (newValue) {
+                taskData.updateTask(task);
+              },
+            ),
+            onDismissed: (direction) {
+              taskData.deleteTask(index);
             },
           );
         },
