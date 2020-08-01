@@ -20,17 +20,17 @@ Flutter: >=1.17.5
 
 ## Running the project
 
-* Open Android Studio -> Select "Check out project from Version Control" -> Select "Git".
+* Open Android Studio -> Select `Check out project from Version Control` -> Select `Git`.
 
-* Enter the following repo URL and select "Clone".
+* Enter the following for `URL` and select `Clone`.
 ```
 https://github.com/hmshreyas7/todoey-flutter.git
 ```
 
-* Click "No" when Android Studio asks if it should create a new project.
+* Click `No` when Android Studio asks `Would you like to create an Android Studio project for the sources you have checked out to ...?`.
 
-* Select "Open an existing Android Studio project" and choose the cloned repo.
+* Select `Open an existing Android Studio project` and choose the cloned repo.
 
-* Once the project loads the necessary files, click "Pub get" on the top-right to install required dependencies.
+* Once it finishes loading the necessary files, click `Get dependencies` on the top-right.
 
 * Run the app either through an emulator in the IDE or a physical device connected via USB to see how it works.
