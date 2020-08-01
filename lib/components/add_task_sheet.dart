@@ -21,6 +21,10 @@ class AddTaskSheet extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           TextField(
+            cursorColor: Colors.lightBlueAccent,
+            style: TextStyle(
+              fontSize: 20.0,
+            ),
             onChanged: (value) {
               newTask = value;
             },
@@ -33,6 +37,7 @@ class AddTaskSheet extends StatelessWidget {
               ),
             ),
             autofocus: true,
+            textAlign: TextAlign.center,
           ),
           SizedBox(
             height: 20.0,
