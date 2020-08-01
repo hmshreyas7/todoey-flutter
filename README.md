@@ -4,6 +4,8 @@ Built as part of "The Complete Flutter Development Bootcamp Using Dart" - Sectio
 
 This app allows users to add tasks, check them off, and delete them by swiping using the Provider package.
 
+<img src="https://i.imgur.com/Or3R2wb.gif" width="50%"/>
+
 ## Getting Started
 
 ### Prerequisites
